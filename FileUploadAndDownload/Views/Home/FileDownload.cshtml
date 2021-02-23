@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "FileDownload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <table class="table table-responsive table-bordered">
+        <tr>
+            <th>File Name</th>
+            <th></th>
+        </tr>
+        @foreach (FileModel file in Model)
+        {
+            <tr>
+                <td>@file.FileName</td>
+                <td><a href="/Home/DownloadFile?filename=@file.FileName">Download</a></td>
+            </tr>
+        }
+    </table>
+</div>
+
+
